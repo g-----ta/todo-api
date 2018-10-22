@@ -129,7 +129,7 @@ describe('DELETE /todos/:id', () => {
   it ('should return 404 if todo not found', (done) => {
     var hexId = new ObjectID().toHexString();
     request(app)
-      .get(`/todos/${hexId}}`)
+      .delete(`/todos/${hexId}}`)
       .expect(404)
       .end(done);
   });
@@ -138,7 +138,7 @@ describe('DELETE /todos/:id', () => {
     var nonObjectID = '5bcc580b897ba578168e481b';
 
     request(app)
-      .get(`/todos/${nonObjectID}`)
+      .delete(`/todos/${nonObjectID}`)
       .expect(404)
       .end(done);
 
